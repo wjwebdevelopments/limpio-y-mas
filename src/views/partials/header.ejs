@@ -1,0 +1,66 @@
+<header class="header">
+    <div class="header__top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <i class="icofont icofont-settings-alt"></i>
+                            My Account
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">
+                            <i class="icofont icofont-heart"></i>
+                            Wishlist
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">
+                            <i class="icofont icofont-shopping-cart"></i>
+                            My Cart
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">
+                            <i class="icofont icofont-list"></i>
+                            Checkout
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">
+                            <i class="icofont icofont-user"></i>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+                <div class="my-2 my-lg-0">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">currency: DOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">language: English</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="header__logo mt-5">
+        <div class="container d-flex justify-content-between">
+            <img src="/public/img/logo-text.png" alt="Limpio Mas Logo">
+            <button class="btn btn-outline-info">
+                Cart - 100
+                <i class="icofont icofont-cart-alt icofont-2x"></i>
+                <span class="badge badge-pill badge-danger">1</span>
+            </button>
+        </div>
+    </div>
+</header>
+<%- include('navigation') %>
+<section class="banner">
+    <div class="banner__content banner__content--heigth d-flex justify-content-center">
+        <h1 class="d-flex align-self-center"><%= pageTitle %></h1>
+    </div>
+</section>

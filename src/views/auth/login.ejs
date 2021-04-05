@@ -1,0 +1,46 @@
+<%- include('../partials/heads') %>
+
+    <div class="container login">
+        <div class="row">
+            <div class="card col-sm-12 col-md-5 col-lg-5 login__card offset-md-3">
+                <div class="card-header">
+                    <h1 class="mb-0">Limpio mas</h1>
+                    <p><span class="lead">Inicio de sesion</span></p>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <form class="row" action="">
+                            <div class="form-group col-12">
+                                <label class="card-content--label" for="email">Email: </label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend d-flex">
+                                        <i class="icofont icofont-user d-flex align-self-center"></i>
+                                    </div>
+                                    <input name="email" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group col-12">
+                                <label class="card-content--label" for="password">Password: </label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend d-flex">
+                                        <i class="icofont icofont-ui-password d-flex align-self-center"></i>
+                                    </div>
+                                    <input name="email" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group col-12">
+                                <button class="btn btn-primary btn-block">Entrar</button>
+                                <button class="btn btn-danger btn-block">Acceder con Google</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p>No tienes una cuenta? <a href="/auth/register">Registrate</a></p>
+                    <p><a href="#">Olvidaste tu contrasena</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('../partials/scripts') %>
