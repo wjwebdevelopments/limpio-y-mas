@@ -8,6 +8,7 @@ const productSchema = new Schema({
     imagesUrl: [{ type: String }],
     brand: { type: String, default: '' },
     category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     price: { type: Number, default: 0 },
     description: { type: String, default: '' },
     countInStock: { type: Number, require: true, min: 0, max: 255 },

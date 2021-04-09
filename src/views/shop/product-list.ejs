@@ -1,0 +1,80 @@
+<%- include('../partials/heads') %>
+    <%- include('../partials/header') %>
+    <div class="container productList">
+        <section class="row mt-3 mb-5">
+
+            <div class="col-4">
+                <%- include('../components/singleSidebar', { products } ) %>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-5 productList__images">
+                        <img class="w-100" src="<%= q.imageUrl %>" alt="">
+                        <div class="productList__images--images">
+                            <img src="/public/img/no-product-image.jpg" alt="product img">
+                            <img src="/public/img/no-product-image.jpg" alt="product img">
+                            <img src="/public/img/no-product-image.jpg" alt="product img">
+                        </div>
+                    </div>
+                    <div class="col-7 productsList__info">
+                        <h1><%= q.title %></h1>
+                        <div class="sidebar__product--price d-flex justify-content-between">
+                            <div>
+                                <span class="now"><%= q.price %></span>
+                                <span class="before">99.99</span>
+                            </div>
+                            <div class="sidebar__product--tag">
+                                <i class="icofont icofont-tag"></i>
+                                <span><%= q.category.name %></span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary my-3">
+                            <i class="icofont icofont-shopping-cart"></i>
+                            Agregar al carrito
+                        </button>
+                        <p class="productsList__info--description mb-0"><%= q.description %></p>
+                        <form action="/products/<%= q.slugTitle %>" method="GET">
+                            <button type="submit" class="btn btn-link productsList__info--more">
+                                <i class="icofont icofont-read-book icofont-2x"></i>
+                                Ver mas
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-5">
+                        <h3>Related Products</h3>
+                        <div class="row">
+                            <% products.forEach(product => { %>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-grid9">
+                                    <div class="product-image9">
+                                        <a href="/products/<%= product.slugTitle %>">
+                                            <img class="pic-1" src="<%= product.imageUrl %>">
+                                            <img class="pic-2" src="<%= product.imageUrl %>">
+                                        </a>
+                                        <a href="#" class="fa fa-search product-full-view"></a>
+                                    </div>
+                                    <div class="product-content">
+                                        <ul class="rating">
+                                            <i class="icofont icofont-star text-warning"></i>
+                                            <i class="icofont icofont-star text-warning"></i>
+                                            <i class="icofont icofont-star text-warning"></i>
+                                            <i class="icofont icofont-star"></i>
+                                            <i class="icofont icofont-star"></i>
+                                        </ul>
+                                        <h3 class="title"><a href="/products/<%= product.slugTitle %>"><%= product.title %></a></h3>
+                                        <div class="price"> $<%= product.price %> - $40.53</div>
+                                        <a class="add-to-cart" href="/products/<%= product.slugTitle %>">VIEW PRODUCTS</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+<%- include('../partials/scripts') %>

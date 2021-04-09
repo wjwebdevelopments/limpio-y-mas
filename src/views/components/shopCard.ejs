@@ -1,0 +1,27 @@
+<div class="product-grid3">
+    <div class="product-image3">
+        <a href="#">
+            <img class="pic-1" src="<%= product.imageUrl %>">
+            <img class="pic-2" src="<%= product.imageUrl %>">
+        </a>
+        <ul class="social">
+            <li><a href="/products?q=<%= product.slugTitle %>"><i class="icofont icofont-eye-alt"></i></a></li>
+            <li><a href="#"><i class="icofont icofont-shopping-cart"></i></a></li>
+        </ul>
+        <span class="product-new-label">New</span>
+    </div>
+    <div class="product-content">
+        <h3 class="title"><a href="#"><%= product.title %></a></h3>
+        <div class="price">
+            $<%= product.price %>
+            <span>$75.00</span>
+        </div>
+        <ul class="rating">
+            <li class="fa fa-star"></li>
+            <li class="fa fa-star"></li>
+            <li class="fa fa-star"></li>
+            <li class="fa fa-star disable"></li>
+            <li class="fa fa-star disable"></li>
+        </ul>
+    </div>
+</div>

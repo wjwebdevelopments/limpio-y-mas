@@ -1,0 +1,45 @@
+<div class="row reviews">
+
+    <% if (user) { %>
+        <div class="col-12">
+            <h3 class="mt-3">Valora este producto</h3>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <form action="" class="col-10">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input value="<%= (user) ? user.name : '' %>" class="form-control" type="text" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electronico</label>
+                        <input value="<%= (user) ? user.email : '' %>" class="form-control" type="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <h5>Tu puntuacion</h5>
+                        <i class="icofont icofont-star text-warning"></i>
+                        <i class="icofont icofont-star text-warning"></i>
+                        <i class="icofont icofont-star text-warning"></i>
+                        <i class="icofont icofont-star"></i>
+                        <i class="icofont icofont-star"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comentario</label>
+                        <textarea class="form-control" name="comment" id="comment" rows="6">
+                            <% (user) ? 'Me encanta este producto!' : '' %>
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success">
+                            <i class="icofont icofont-paper-plane icofont-2x"></i>
+                            Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <% } else { %>
+        <div class="col-12">
+            <h3 class="mt-3"><a href="/auth/login">Inicia sesion</a> para valorar este producto</h3>
+        </div>
+    <% } %>
+</div>

@@ -9,30 +9,25 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"><a class="nav-link" href="/">Shop</a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/product">Products</a>
+                    <a class="nav-link" href="/products?q=<%= products[0].slugTitle %>">Productos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cart">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/order">Orders</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/add-product">Add product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/products">Admin product</a>
-                </li>
+                <% if (isAuthenticated) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">Mi Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">Mi orden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/add-product">Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/products">Mis productos</a>
+                    </li>
+                <% } %>
             </ul>
             <div class="my-2 my-lg-0">
-<!--                <ul class="navbar-nav">-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="/login">Login</a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="/signup">Signup</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
+                <!-- Lado derecho de la navegacion -->
             </div>
         </div>
     </div>

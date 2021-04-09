@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
-const categorySchema = Schema({
+const categorySchema = new Schema({
     name: { type: String, require: true },
     icon: { type: String },
     color: { type: String }

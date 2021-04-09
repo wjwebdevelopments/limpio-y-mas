@@ -1,0 +1,43 @@
+<div class="row sidebar">
+    <div class="sidebar__single col-12 mb-5">
+        <h3 class="mb-0">Search products</h3>
+        <form action="">
+            <div class="form-group">
+                <label for=""></label>
+                <input type="search" class="form-control" placeholder="Buscar producto ...">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <div class="sidebar__single col-12 mb-5">
+        <h3 class="mb-0">Products</h3>
+        <div class="sidebar__product mt-3">
+            <% products.forEach(product => { %>
+                <% if (product.isFeature) { %>
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="<%= product.imageUrl %>" class="w-100" alt="">
+                            </div>
+                            <div class="col-9">
+                                <a href="/products/<%= product.slugTitle %>">
+                                    <h5><%= product.title %></h5>
+                                </a>
+                                <div class="sidebar__product--price">
+                                    <span class="now"><%= product.price %></span>
+                                    <span class="before">99.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        </div>
+    </div>
+    <div class="sidebar__single col-12">
+        <h3 class="mb-0">Recent post</h3>
+
+    </div>
+</div>

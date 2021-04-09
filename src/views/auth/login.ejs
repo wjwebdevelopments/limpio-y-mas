@@ -7,29 +7,37 @@
                     <h1 class="mb-0">Limpio mas</h1>
                     <p><span class="lead">Inicio de sesion</span></p>
                 </div>
-                <div class="card-content">
+                <div class="card-content d-flex flex-column justify-content-center">
                     <div>
-                        <form class="row" action="">
+                        <% if (errorMessage) {%>
+                            <div class="alert alert-dismissible alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Oh snap!</strong> <a href="#" class="alert-link"><%= errorMessage %></a> verifica los datos ingresados y trata de nuevo.
+                            </div>
+                        <% }%>
+                    </div>
+                    <div>
+                        <form class="row" action="/auth/login" method="POST" id="login__formulario">
                             <div class="form-group col-12">
                                 <label class="card-content--label" for="email">Email: </label>
-                                <div class="input-group">
+                                <div class="input-group login__input">
                                     <div class="input-group-prepend d-flex">
                                         <i class="icofont icofont-user d-flex align-self-center"></i>
                                     </div>
-                                    <input name="email" type="text" class="form-control">
+                                    <input id="login__email" name="email" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-12">
                                 <label class="card-content--label" for="password">Password: </label>
-                                <div class="input-group">
+                                <div class="input-group login__input">
                                     <div class="input-group-prepend d-flex">
                                         <i class="icofont icofont-ui-password d-flex align-self-center"></i>
                                     </div>
-                                    <input name="email" type="text" class="form-control">
+                                    <input id="login__password" name="password" type="password" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-12">
-                                <button class="btn btn-primary btn-block">Entrar</button>
+                                <button id="login__btn" type="submit" class="btn btn-primary btn-block">Entrar</button>
                                 <button class="btn btn-danger btn-block">Acceder con Google</button>
                             </div>
                         </form>

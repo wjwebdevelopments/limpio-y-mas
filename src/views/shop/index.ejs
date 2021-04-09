@@ -2,25 +2,18 @@
     <%- include('../partials/header') %>
 
     <div class="container shopProduct">
-        <section class="row">
-            <% products.forEach(product => { %>
-                <div class="col-4 mt-5">
-                    <div class="card shopProduct__card">
-                        <div class="card-header shopProduct__card--img">
-                            <img src="<%= product.imageUrl %>" alt="">
-                        </div>
-                        <div class="card-content shopProduct__card--content">
-                            <div class="shopProduct__card--info">
-                                <h3 class="title">
-                                    <a href="#"><%= product.title.slice(0, 25) + ' ...' %></a>
-                                </h3>
-                                <p>RD$ <%= product.price %> </p>
-                            </div>
-                            <button class="btn btn-info">Add to cart</button>
-                        </div>
+        <section class="row mt-5">
+
+            <% if (products.length > 0) { %>
+                <% products.forEach(product => { %>
+                    <div class="col-md-3 col-sm-6">
+                        <%- include('../components/shopCard', { product }) %>
                     </div>
-                </div>
-            <% }) %>
+                <% }) %>
+            <% } else { %>
+                    <%- include('../components/noProducts') %>
+            <% } %>
         </section>
     </div>
+
 <%- include('../partials/scripts') %>

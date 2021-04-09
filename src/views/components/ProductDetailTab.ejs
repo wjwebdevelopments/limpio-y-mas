@@ -1,0 +1,28 @@
+<ul class="nav nav-tabs productDetail__info--tabs">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#description">Descripcion</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#vendedor">Vendedor</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#ubicacion">Envio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#valoracion">Valorar</a>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content productDetail__info--tab-content">
+    <div class="tab-pane active show" id="description">
+        <p class="mt-3"><%= product.description %></p>
+    </div>
+    <div class="tab-pane fade" id="vendedor">
+        <%- include('VendedorTab', { seller: product.userId }) %>
+    </div>
+    <div class="tab-pane fade" id="ubicacion">
+        <p class="mt-3">Ubicacion y envio</p>
+    </div>
+    <div class="tab-pane fade" id="valoracion">
+        <%- include('ReviewsTab') %>
+    </div>
+</div>

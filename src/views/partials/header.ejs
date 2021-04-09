@@ -1,14 +1,8 @@
-<header class="header">
+<header class="header" xmlns="http://www.w3.org/1999/html">
     <div class="header__top">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">
-                            <i class="icofont icofont-settings-alt"></i>
-                            My Account
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/signup">
                             <i class="icofont icofont-heart"></i>
@@ -27,15 +21,39 @@
                             Checkout
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup">
-                            <i class="icofont icofont-user"></i>
-                            Login
-                        </a>
-                    </li>
+                    <% if (isAuthenticated) { %>
+                        <li class="nav-item">
+                            <form action="/auth/logout" method="POST">
+                                <button class="btn btn-link header__top--btn__logout">
+                                    <i class="icofont icofont-logout"></i>
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/login">
+                                <i class="icofont icofont-login"></i>
+                                Login
+                            </a>
+                        </li>
+                    <%  } %>
                 </ul>
                 <div class="my-2 my-lg-0">
                     <ul class="navbar-nav">
+                        <% if (user) { %>
+                            <li class="nav-item d-flex header__user">
+                                <img style="width: 40px; height: 40px; border-radius: 50%" class="img-fluid" src="<%= user.avatar %>" alt="<%= user.name %>">
+                                <div class="btn-group show" role="group">
+                                    <a class="pointer nav-link text-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><%= user.name.split(' ')[0] %></a>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
+                                        <a class="dropdown-item" href="/users/<%= user.slugName %>"><i class="icofont icofont-user mr-2"></i>Perfil</a>
+                                        <a class="dropdown-item" href="#"><i class="icofont icofont-settings mr-2"></i>Configuracion</a>
+
+                                    </div>
+                                </div>
+                            </li>
+                        <% } %>
                         <li class="nav-item">
                             <a class="nav-link" href="/login">currency: DOP</a>
                         </li>
@@ -49,7 +67,8 @@
     </div>
     <div class="header__logo mt-5">
         <div class="container d-flex justify-content-between">
-            <img src="/public/img/logo-text.png" alt="Limpio Mas Logo">
+<!--            <img src="/public/img/logo-text.png" alt="Limpio Mas Logo">-->
+            <h2 class="logo__text">Limpio y mas</h2>
             <button class="btn btn-outline-info">
                 Cart - 100
                 <i class="icofont icofont-cart-alt icofont-2x"></i>
@@ -60,7 +79,7 @@
 </header>
 <%- include('navigation') %>
 <section class="banner">
-    <div class="banner__content banner__content--heigth d-flex justify-content-center">
-        <h1 class="d-flex align-self-center"><%= pageTitle %></h1>
+    <div class="banner__content banner__content--heigth d-flex flex-column align-items-center justify-content-center">
+        <h3 class="d-flex align-self-center"><%= pageTitle %></h3>
     </div>
 </section>

@@ -4,39 +4,24 @@
     <div class="container adminProduct">
         <section class="row adminProduct__content mt-4">
             <% products.forEach(product => { %>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-header ">
-                            <h3 class="card-title mb-0"><%= product.title.slice(0, 25) + ' ...' %></h3>
-                            <span class="text-uppercase"> <%= product.brand %> </span>
-                            <img class="adminProduct__content--image" src="<%= product.imageUrl %>" alt="">
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid5">
+                        <div class="product-image5">
+                            <a href="#">
+                                <img class="pic-1" src="<%= product.imageUrl%>">
+                                <img class="pic-2" src="<%= product.imageUrl%>">
+                            </a>
+                            <ul class="social">
+                                <li><a href="" data-tip="Quick View" title="Editar"><i class="icofont icofont-ui-edit"></i></a></li>
+                                <li><a href="" data-tip="Add to Wishlist" title="Compartir"><i class="icofont icofont-share"></i></a></li>
+                                <li><a href="" data-tip="Add to Cart" title="Codigo QR"><i class="icofont icofont-qr-code"></i></a></li>
+                            </ul>
+                            <a href="#" class="select-options"><i class="icofont icofont-trash"></i> Eliminar</a>
                         </div>
-                        <div class="card-content" style="padding: .75rem 1.25rem">
-                            <div class="adminProduct__info d-flex justify-content-between mb-2">
-                                <span class="adminProduct__price adminProduct__price--bold">RD$ <%= product.price %> </span>
-                                <div class="d-flex">
-                                    <div class="mr-2">
-                                        <i class="icofont icofont-eye-alt"></i>
-                                        <span><%= product.numReviews %></span>
-                                    </div>
-                                    <div>
-                                        <i class="icofont icofont-heart-alt "></i>
-                                        <span><%= product.rating %></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="adminProduct__description">
-                                <p><%= product.description.slice(0, 180) + ' ...' %></p>
-                            </div>
-                            <div class="adminProduct__buttons d-flex justify-content-between">
-                                <button class="btn btn-info">
-                                    <i class="icofont icofont-cart-alt"></i>
-                                    Add to cart
-                                </button>
-                                <a class="d-flex align-self-center" href="#">Detail</a>
-                            </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#"><%= product.title %></a></h3>
+                            <div class="price">$<%= product.price%> - $15.00</div>
                         </div>
-                        <span class="badge badge-danger text-capitalize"><%= product.category.name %></span>
                     </div>
                 </div>
             <% }) %>

@@ -1,0 +1,42 @@
+<%- include('../partials/heads') %>
+    <%- include('../partials/header') %>
+    <main class="container productDetail my-md-5">
+        <div class="row">
+            <section class="col-md-6 productDetail__image jumbotron">
+                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            </section>
+            <aside class="col-md-6 productDetail__info d-flex flex-column">
+                <div class="productDetail__title">
+                    <h1><%= product.title %></h1>
+                    <p>
+                        <i class="icofont icofont-fire-burn icofont-4"></i>
+                        26 articulos vistos por dia
+                    </p>
+                </div>
+                <p class="my-3">
+                    <span class="productDetail__info--price">$<%= product.price %></span>
+                    <span class="productDetail__info--price-before text-danger">$12.99</span>
+                </p>
+                <form action="" class="row mb-3">
+                    <div class="col-3">
+                        <input class="form-control" style="width: 100%" type="number" min="0" max="100" step="1" value="1">
+                    </div>
+                    <div class="col-9">
+                        <button class="btn btn-primary">
+                            <i class="icofont icofont-shopping-cart icofont-2x"></i>
+                            Comprar
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="icofont icofont-heart icofont-2x"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="mb-3">
+                    <p class="productDetail__info--category mb-0">Categoria: <span><%= product.category.name %></span></p>
+                    <p class="productDetail__info--referencia mb-0">Referencia: <strong><%= product._id %></strong></p>
+                </div>
+                <%- include('../components/ProductDetailTab') %>
+            </aside>
+        </div>
+    </main>
+<%- include('../partials/scripts') %>
